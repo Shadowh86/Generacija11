@@ -1,0 +1,1175 @@
+int - cijeli brojevi
+float - desimalni brojevi
+3.4, 5.2. 0.01
+
+float mama = 5.6f
+float tata = 25.0f
+float beba = 0f
+
+beba = mama + tata
+
+beba = 30.6f
+
+Napišite 3 varijable float vrijednosti gdje se
+od prve oduzima zbroj druge i treće.
+
+float rijeka = 5f
+float zagreb = 6.2f
+float split = 1.2f
+
+rijeka = rijeka - (zagreb + split)
+
+rijeka = -2.4f
+
+Koliki je zbroj x i y ako znamo da je 
+
+float x = 4.55f
+float y = 69f
+float xy = 0f
+
+xy = x + y
+
+Zbroji x i y ako je x 5, a y je 8
+
+float x = 5f;
+float y = 8f;
+float z = 0f;
+
+z = x + y;
+
+Koliki je x ako je z 2 a y 33
+
+int z = 2;
+int y = 33;
+int x;
+(u ovom slucaju x je null)
+
+x = z + y;
+
+Ušli ste u borbu. U šanžeru imate 15 metaka od
+maksimalnih 20. Ispucali ste ih 4, te potom
+reloadali šanžer. Napisite to programski.
+
+int PunS = 20;
+int S = 15;
+int Metak = 1;
+
+S = S - Metak;
+S = S - Metak;
+S = S - Metak;
+S = S - Metak;
+S = PunS;
+Na početku prvi igrač ima 12 ponija, 
+drugi igrač ima 10 ponija. Koliko ponija ima
+koji igrač ako prvi otme drugome 4 ponija?
+Napisite programski.
+
+int igracA = 12;
+int igracB = 10;
+int Ukradeno = 4;
+
+igracA = igracA + Ukradeno;
+igracB = igracB - Ukradeno;
+Povećajte vrijednost x za vrijednost x ako je 
+x 5.
+
+int x = 5;
+
+x = x + x;
+x += x;
+
+// Nemam pojma kako radi i ne diraj
+
+// single line komentar
+/* 
+	Multy
+	line
+	komentar
+*/
+Vrijednost x je 6, y je 7.
+njih ubrojite zatim pomnožite za vrijednost y
+i spremite u vrijednost z.
+
+/*
+int x = 6; 
+int y = 7;
+int z = 0;
+
+z = (x + y) * y;
+*/
+
+Igrac ima 100 max hp i 50 movement points.
+U inventory ima 1 heal potion koji ga heal-a
+za 10%. Ima dvije vrste napada:
+specijalni napad koji radi 50 dmg i trosi
+30 movement points-a
+obicni napad koji radi 30 dmg i ne trosi
+movement points. Monster ima 126HP-a i udara za 30 dmg. Tuku se po potezima naizmjenično svatko jedan 
+napad pokrugu a potion trosi jedan krug.
+Combat je gotov kada jedan od njih umre
+Tko umire prvi, ako igrac trosi sve sto mu je na
+raspolaganju. Igrač prvi igra.
+
+//Player
+float playerHP = 100f;
+int movement = 50;
+int specialAttack = 50;
+int specialAttackCost = 30;
+int playerAttack = 30;
+int healthPotion = 1;
+float healthPotionHealAmount = 0.1f
+
+//Enemy
+float enemyHealth = 126f;
+int enemyAttack = 30;
+
+//Prvi potez
+enemyHealth -= specialAttack; // 126 - 50 = 76
+movement -= specialAttackCost; // 50 - 30 = 20
+
+//Drugi potez
+playerHP -= enemyAttack; // 100 - 30 = 70
+
+//Treci potez
+enemyHealth -= playerAttack; // 76 - 30 = 46
+
+//Cetvrti potez
+playerHP -= enemyAttack; // 70 - 30 = 40
+
+//Peti potez
+enemyHealth -= playerAttack; // 46 - 30 = 16
+//enemyHealth = enemyHealth  - playerAttack; 
+
+//Sesti potez
+playerHP -= enemyAttack; // 40 - 30 = 10
+
+//Sedmi potez
+enemyHealth -= playerAttack; // 16 - 30 = -14
+
+Uvijet izjava ako se nešto ispunilo drugo će se dogoditi.
+
+Primjeri uvijeta:
+	if - AKO
+	while - DOK
+
+ == jednako (provjeravamo da li su vrijednosti jednake)
+= dodijela vrijednosti
+!= različito je
+|| vrijednost ili (AltGr + W)
+&& vrijednost i
+< manje 
+> veće
+<= manji ili jednak
+>= veći ili jednak
+if( 1 + 1 == 2) -> točno
+if( 2 + 3 != 4) -> točno
+if(18 > 19) 	-> netočno
+if( 21 <= 21) 	-> točno
+
+if(istina || laž) -> točno
+if(istina || istina) -> točno
+if(laž || istina) -> točno
+if(istina && istina) -> točno
+if(istina && laž) -> netočno
+if(laž && laž) -> netoćno
+
+x je 8, y je 13, ako je njihov zbroj manji od 50 neka se x poveća za samog sebe, a ako je zbroj veći ili jednak od 50 neka se y poveća za samog sebe, a u svim ostalim slućajevima x se treba pomnožiti za y i spremiti u x.
+
+int x = 8;
+int y = 13;
+
+if(x + y < 50)
+{
+   x += x;
+}
+
+else if(x + y >= 50) 
+//else if(x + y > 50 || x + y == 50)
+{
+   y += y;
+} 
+
+else
+{
+   x *= y;
+}
+
+Vrijednost x je -3.6, vrijednost y je 10. Ako je njihov umnožak veći od 100 neka se x uveća za taj umnožak, ako je manji od 100 neka se y uveća za taj umnožak, a ako je umnožak jednam 100 neka se x i y uvećaju za sami sebe.	
+
+float x = -3.6f;
+float y = 10f;
+
+if(x*y > 100)
+{
+   x += x*y;
+}
+
+else if(x*y < 100)
+{
+   y += x*y;
+}
+
+
+
+else if(x*y == 100)
+{
+   x +=x;
+   y +=y;
+}
+
+PRAVILNO IMENOVANJE VARIJABLI
+
+Camel Case (camelCase)
+
+_camelCase
+camelCase
+
+igrač ima max HP 100
+
+playerMaxHealth
+
+
+Igračev health je 30. regeneracija ce mu krenuti ako mu je health pao ispod 20 i povećat će se za 12.
+
+int playerHealth = 30;
+int healthRegen = 12;
+
+if (playerHealth < 20)
+{
+	playerHealth += healthRegen;
+}
+
+
+DZ
+
+1) Počtna vrijednost healtha je 100, primamo damage u vrijednosti 17.6, kolika je konačna vrijednost healtha?
+
+float playerHealth = 100f;
+float enemyDamage = 17.6f;
+
+playerHealth -= enemyDamage; // 82.4 hp
+Imate 10 pokrajina. Svaka pokrajina po potezu daje 1 zlatnik. Nakon 3 poteza si izgubio 50% pokrajina. Prošlo je još 2 poteza. Koliko imaš zlatnika na kraju? 
+Napišite programski.
+
+
+float gameBalance = 0f;
+float province = 10f;
+float provinceDeduction = 0.5f;
+float gameCoin = 1f;
+
+//Prvi potez
+
+gameBalance += province * gameCoin; // gameBalance = 10
+
+//Drugi potez
+
+gameBalance += province * gameCoin; // 20
+
+//Treci potez 
+
+gameBalance += province* gameCoin; // 30
+province *= provinceDeduction; // province = 5
+
+//Finalni potez
+
+gameBalance += province * gameCoin;
+gameBalance += province * gameCoin; // 40 
+
+Igrač ima 250 kristala, dao je 80 kristala čarobnjaku. Potom je prošao level i zaradio 70 kristala. Koliko igrač ima kristala, a koliko kristala ima čarobnjak?
+
+int playerCristals = 250;
+int playerGivenCristals = 80;
+int levelPassedReward = 70;
+int wizardCristals = 0;
+
+//Prvi level
+
+	playerCristals -= playerGivenCristals; // 250-80=170
+	wizardCristals += playerGivenCristals; // 0 + 80 = 80
+
+// Drugi level
+	
+	playerCristals += levelPassedReward; // 170 +70 = 240
+	
+Igračev health je 31. Regeneracija ce mu krenuti ako mu je health pao ispod 20 i povećati će se za 12. Igrac prvo prima dmg od 9. Zatim je popio potion koji mu je vratio 10 hp i potom je primio critical strike koji mu je skinuo 26 hp. Pitanje je jel se igracu dogodio health regen i ako je kada? Napisati programski i oznacite komentarima kada se dogodila regeneracija.
+
+int playerHealth = 31; 
+int healthRegenerate = 12;
+int damage = 9;
+int healthPotion = 10;
+int criticalStrike = 26;
+
+//prvi potez
+playerHealth -= damage ; //31-9=22
+
+//drugi potez 
+playerHealth += healthPotoion; //22+10=32
+
+//treći potez
+playerHealth -= crtiticalStrike; // 32-26=6
+
+if(playerHealth < 20)
+{
+	playerHealth += healthRegenerate; //6 + 12 = 18
+}
+
+//playerHealthRegeneration se desio nakon trećeg poteza kada mu je health pao na 6 
+
+Pokemon evoluira kada dođe na 16 level. Da bi došao na 16 level potrebno mu je ukupno 4561 XP-a. Početni level mu je 1 i ima 0 XP-a. Odradio je 25 borbi gdje je dobio 25 XP-a po borbi i potom jos 25 borbi gdje je u svakoj dobio 93 XP-a. Napravite provjeru da li ima dovoljno XP-a za evoluciju, a ako nema gubi sav XP, a ako ima onda mu je level 16.
+
+int evolveExperience = 4561;
+int currentLevel = 1;
+int currentExperience = 0;
+int firstStageFight = 25;
+int secondStageFight = 93;
+int borbe = 25;
+
+currentExperience += firstStageFight * borbe; //625 XP
+currentExperience += secondStageFight * borbe; //2325 + 625 = 2950
+
+if(currentExperience >= evolveExperience)
+{
+	currentLevel = 16;
+}
+else if(currentExperience < evolveExperience)
+{
+	evolveExperience = 0;
+}
+Ork je jacine 5, a slon je jacine 17, ako je njihova razlika veća od 10 neka se ork poveća za slona, a ako je manja ili jednaka neka se slon poveća za orka.
+
+int ork = 5;
+int slon = 17;
+
+if (10 < slon - ork /* 12*/ || ork - slon > 10 /*-12*/)
+{
+	ork += slon;
+}
+
+else if (10 => slon - ork /* */ || 10 => ork - slon)
+{
+	slon += ork;
+}
+
+
+U šumi je 6 elfova, 5 gnomova i 10 orkova, ako je broj elfova i gnomova veći ili jednak orkovima, broj elfova se uveća za njihov broj (poduplaju se), a ako je njihov zbroj manji, orkovi pojedu 50% gnomova i 20% elfova.
+
+int elfAmount = 6;
+int gnomeAmount = 5;
+int orcAmount = 10;
+
+if ( elfAmount + gnomeAmount >= orcAmount )
+{
+	elfAmount += elfAmount;
+}
+
+else
+{
+	gnomeAmount = (int)(gnomeAmount * 0.5f);
+	elfAmount = (int)(elfAmount * 0.8f);
+}
+x je 15, y je 100, ako je x između 13 i 19 (inkluzivni su 13 i 19) povečaj y za 20%, a ako nije onda y smanji za 13%. Ne smije se spremati u decimalnom zapisu.
+
+int x = 15;
+int y = 100;
+
+if(x >= 13 && x <= 19){
+	y = (int)(y + (y * 0.2f));
+}
+
+else{
+	y = (int)(y - (y * 0.13f));
+}
+Vrijednost "nice" je 69, a vrijednost "blaze" je 420, ako je zbroj tih vrijednosti pomnožen sa 2 veći od 1300 neka se nice podupa, a ako je manji ili jednak 1250 neka se blaze podupla.
+
+int nice = 69;
+int blaze = 420;
+
+if((nice + blaze) * 2 > 1300){
+	nice += nice;
+}
+else if((nice + blaze) * 2 <= 1250){
+	blaze += blaze;
+}
+
+Cilj igre je skupit 4 objekata, prsten, pehar, zlatnik i dijamant. Sa svakim skupljenim itemom aktivira se jedan boss, a kada se skupi svih 4 itema, igra je pređena. Odmah skupljate prsten, te dalje tim redosljedom. Sa koliko bossova ste se borili dok niste prešli igru?
+
+int prsten = 1;
+int pehar = 0;
+int zlatnik = 0;
+int dijamant = 0;
+int boss = 0;
+int brojItema = 0;
+int maxBrojItema = 4;
+
+if(prsten == 1)
+{
+brojItema++;
+boss++;
+}
+
+if(pehar == 1)
+{
+brojItema++;
+boss++;
+}
+
+if(zlatnik == 1)
+{
+brojItema++;
+boss++;
+}
+
+if(dijamant == 1)
+{
+brojItema++;
+boss++;
+}
+
+if(brojItema == maxBrojItema)
+{
+// pređena igra
+}
+
+Igrač HP-a 100 je primio dmg 23. Popijemo potion koji nam vrati 15 hp. Napiši programski.
+
+int playerHealth = 100;
+int damage = 23;
+int potion = 15;
+
+playerHealth -= damage;
+playerHealth += potion;
+
+if (playerHealth <= 0)
+{
+	//dead
+}
+
+x je 50, y je 100, ako je njihov zbroj veći od trostruke vrjednosti x onda neka se x podupla, a ako je manji neka se y udvostruči, a ako su jednaki neka se oba kvadriraju.
+
+int x = 50;
+int y = 100;
+
+if( x + y > x * 3 ) 
+	x *= 2;
+
+else if( x + y < x * 3 )
+	y *= 2;
+
+else if(x + y == x * 3){
+	x *= x;
+	y *= y;
+}
+
+Igrač ima 100 HP. Ako mu HP padne ispod 75 regenerira mu se health za 10, a ako padne ispod 25 i igrač ostane živ, regenerira mu se za 25 HP. Igrač prvo primi dmg od 55, a zatim opet primi dmg od 55. Kolko HP ima igrač?
+
+int playerHealth = 100;
+int damage = 55;
+int minorRegeneration = 10;
+int majorRegeneration = 25;
+
+if(playerHealth < 75  && playerHealth > 25)
+{
+	playerHealth += minorRegeneration;
+}
+
+else if(playerHealth < 25 && playerHealth > 0)
+{
+	playerHealth += majorRegeneration;
+}
+
+// Prvi turn
+playerHealth -= damage; // 100 - 55 = 45 , regeneration se aktivira 45 + 10 = 55
+playerHealth -= damage; // 55 - 55 = 0
+
+
+Kapetan Miki ima 10 HP, ako primi damage veći od 5, a da ga to neće ubiti onda se Miki naljuti i njegov HP bude 20.
+
+int mikiHp = 10;
+int damageTaken = 1;
+
+
+
+if ( damageTaken > 5 && mikiHp > damageTaken)
+
+	mikiHp = 20;
+
+Igrač jedan i dva su imali 100 hp. Igrač dva je udario igrača jedan te mu oduzeo 25 hp, igrač jedan kontra napadom oštečuje igrača dva za 14 hp, te regenerira sebe za 10 hp. Koliko koji igrač ima hp?
+
+int playerOne = 100;
+int playerTwo = 100;
+
+playerOne -= 25;
+playerTwo -= 14;
+playerOne += 10;
+
+Koji igrač je pobjedio? Pobjeđuje igrač sa više hp-a.
+
+if(playerOne > playerTwo)
+	// Player One Won
+
+else if(playerTwo > playerOne)
+	// Player Two Won
+
+else
+	// Tie
+
+Igračev health je 30. Regeneracija će mu krenuti ako mu je health pao ispod 20 i povećati će se za 12.
+
+
+int playerHealth = 30;
+int regenerationAmount = 12;
+int regenerationTreshold = 20;
+
+if (playerHealth < regenerationTreshold)
+{
+	playerHealth += regenerationAmount;
+}
+
+x je veličine 5, a y je veličine 19, ako je njihov zbroj manji od 40 neka se x poveća za samoga sebe, a ako je zbroj veći ili jednak 40 neka se y poveća za samoga sebe, a u svim ostalim slučajevima x se treba pomožiti za y i spremiti u x.
+
+int x = 5;
+int y = 19;
+
+if(x + y < 40){
+x += x;
+}
+
+else if(x + y >= 40){
+y += y;
+}
+
+else{
+x *= y;
+}
+
+Početna vrijednost varijable je 830, X je 69, a Y je 538. Ukoliko je umnožak x i y manji od 1000 i varijabla vrijednosti 830 zbrojena sa y je veća od 1000, neka se varijabla sa početnom vrijednošću 830 smanji za 100. Ukoliko je umnožak veči (samo to je uvijet), neka se početna varijabla poveča za 100. U svim ostalim slučajevima neka se početna varijabla pomnoži za 100.
+
+int z = 830;
+int x = 69;
+int y = 538;
+
+if (x*y < 1000 && z+y > 1000)
+	z -= 100;
+
+else if (x*y > 1000)
+	z += 100;
+
+else
+	z *= 100;
+
+A je jačine 5, a B je jačine 17 ako je njihova razlika veća od 10 neka se broj A poveća za B, a ako je manja ili jednaka neka se B poveća za A.
+
+int A = 5;
+int B = 17;
+
+if(A - B > 10 || B - A > 10)
+	A += B;
+
+else if(A - B <= 10 || B - A <= 10)
+	B += A;
+
+Imate varijablu X. Ako je X veći od 10, neka se X uveća za 20, a ako je X manji od 10 neka se umanji za 9. U ostalim slučajevima neka se X pomnoži sa samim sobom.
+
+int x;
+
+if (x > 10)
+	x += 20;
+
+else if (x < 10)
+	x -= 9;
+
+else
+	x *= x;
+
+Vi imate 15€, a vaš frend 25€ i vaš treći frend ima 10.5€. Vi takvi siromašni se odlučite kupiti Bugatti Vayrona koji košta 2500000€. Ako osoba koja ima najviše novaca ima duplo više novaca od osobe koja ima najmanje novaca, onda on plaća pola cijene. A ostala dvojica djele drugu polovicu po pola. Ako to nije slučaj onda svi plačaju jednak iznos. Napišite kolko svakome pojedinačno još fali novaca.
+
+float my = 15f;
+float friendOne = 25f;
+float firendTwo = 10.5f;
+int bugatti = 2500000;
+
+if(my > friendOne && my > friendTwo)
+{
+	if(firendOne > friendTwo)
+	{
+		if(my >= friendTwo * 2)
+		{
+			my -= bugatti * 0.5f;
+			friendOne -= bugatti * 0.25f;
+			friendTwo -= bugatti * 0.25f;
+		}
+
+	}
+
+	else
+	{
+		my -= bugatti / 3;
+		firendOne -= bugatti / 3;
+		friendTwo -= bugatti / 3;
+	}
+}
+
+Prvi vozač ima 10 kockica a drugi ima 13. Kada se oni sudare onaj koji ima manje ukrade drugome jednu kockicu.
+
+int x = 10;
+int y = 13;
+
+if(x > y)
+{
+	y += 1;
+	x -= 1;
+	// y++; i x--;
+}
+
+else if (y > x)
+{
+	y--;
+	x++;
+}
+
+Varijabla x je 15, varijabla y je dva puta veća od x. Ako je zboroj x i y manji od 50, x se poveća za y. Ako je zbroj x i y veći od 50 x se oduzima y, a ako je zbroj jednak onda x dobiva y vrijednost.
+
+int x = 15;
+int y = 2 * x;
+
+if(x + y < 50)
+{
+	x += y;
+}
+
+else if(x + y > 50)
+{
+	x -= y;
+}
+
+else
+{
+	x = y;
+}
+
+
+ Super Mario je imao 3 života na početku. izgubio je 2. Dobio je jedan život tokom nivoa i dobio jedan nakon što je prešao nivo. Napiši programski.
+
+int lives = 3;
+
+lives -= 2;
+
+lives++;
+
+lives++;
+
+//Super Mario ima 3 zivota
+
+Max HP je 100, body shoot je 20 damage. Vaš lik ima 89 HP na početku borbe i odmah te neprijatelj pogodi "body shoot". Potom padneš i izgubiš 2% HP-a i usput te neki NPC nabije i napraviti damage u iznosu od 8% maxHP-a. Regenerira ti se HP na max, ali te opet neprijatelj pogodi "body shoot" i head shoot koji je duplo veći od body shoota. Potom je NPC se zbugao i nanio ti istu štetu kao i prije.
+I napisite komentare.
+
+
+//pocetne vrijednosti i vrste demage
+
+int maxHP = 100;
+int playerHP = 89;
+int bodyShoot = 20;
+int headShoot = bodyShoot *2;
+
+//postoci demage
+
+float fallDamagePercent = 0.02f;
+float npcDamagePercent = 0.08f;
+
+//prvi napad
+ playerHP -= bodyShoot; //89-20-69
+
+//pad -2% trenutno Hp
+playerHP -= (int)(playerHP * fallDamagePercent);
+
+//NPC damage -8% na maxHP
+playerHP -= (int)(maxHP*npcDamagePercent);
+
+//regen na maxHP
+playerHP = maxHP;
+
+//drugi body shoot
+playerHP -= bodyShoot; 
+
+// head shoot
+playerHP -=headShoot;  //80-40=40
+
+//npc pon ista šteta
+
+playerHP -= (int)(maxHP * npcDenagePercent);
+
+// konacni hp igraca je 32
+
+
+METODE
+
+void Awake - odvija se na 0 frame-u
+	   - Izvršava samo jednom
+	   - stvaranje objekata na sceni
+
+void Start - poziva se jednom
+	   - prije Update-a
+
+void Update - poziva se svaki frame
+
+
+private void Start()
+{
+	//linija ili blok naredbi
+}
+
+void MojaMetoda()
+{
+	
+}
+
+void - ne vraćaju ništa
+
+int MojaMetoda()
+{
+	int broj = 10;
+	return broj;
+}
+
+
+private - vidi se samo unutar klase u kojoj je stvorena metoda ili varijabla
+
+public - vidljivo je svim klasama unutar jednog projekta
+
+
+// Jos malo varijabli
+bool - moze biti true ili false (0 ili 1)
+
+string - tekstualni zapis
+
+
+string name = "Djuro";
+bool isActive = false; //Po zadanom je false
+
+Debug.Log();
+
+void Start()
+{
+	var rezultat = x * y;
+	Debug.Log($"Rezultat je: {rezultat}"); // 32
+	Debug.Log("Rezultat je: " + rezultat);
+}
+
+
+Napomena: ako nije definirano da je varijabla ili metoda public, onda je po zadanom private
+
+Zadaci
+U startu neka se zbroje 2 javna broja, i neka se ispiše u konzoli njihov zbroj.
+
+public int x = 10;
+public int y = 10;
+
+void Start()
+{
+	int rezultat = x + y;
+	Debug.Log($"Rezultat je: {rezultat}");
+}
+Zbrojite u startu x koji je 17,2 i y koji je javan broj. Neka se rezultat sprema u varijablu "banana" i neka se ispise u konzoli.
+
+float x = 17,2f;
+public float y;
+float banana;
+
+void Start()
+{
+	banana = x + y;
+	Debug.Log($"Banana? {banana}");	
+}
+
+Povecajte x cija je pocetna vrijednost 5 i povecava se svaki frame za 5.
+
+
+int x = 5;
+
+void Update()
+{
+	x += 5;
+}
+
+X je 6, y je 7 i njihov zbroj se treba izracunati u startu, zatim se rezultat uveca za x svaki frame.
+
+int x = 6;
+int y = 7;
+int result;
+
+void Start()
+{
+	result = x + y;
+}
+
+void Update()
+{
+	result += x;
+}
+
+x je 8, y je javan broj i njihov zbroj neka se izracuna u startu, a svaki frame neka se rezultat poveca za polovicu x varijable.
+
+int x = 8;
+public int y;
+int zbroj;
+
+void Start(){
+	zbroj = x + y;
+}
+
+void Update(){
+	zbroj += x/2;
+}
+
+Ako je vrijednost x -3,6, a vrijednost y je javna. Ako je zbroj veci od 20 neka se ispise "Legenda", a ako je manji ili jednak neka se ispise u konzoli "Blaze it".
+
+
+
+float x = -3.6f;
+public float y;
+
+void Awake()
+{
+	if (x + y > 20)
+	{
+		Debug.Log("Legenda");
+	}
+
+	else if (x + y <= 20)
+	{
+		Debug.Log("Blaze it");
+	}
+}
+
+Imate dva javna cijela broja. Njihov rezultat zbrajanja se sprema u javnu varijablu. Svaki frame se prvi cijeli broj mora povćati za 1, potom se računa rezultat zbrajanja prvog i drugog broja. Ako je manji od 500 ispisuje se "Manji", a ako je između 500 i 2000 ispisuje se "Prosječan", ako je veći ispisuje se "Najveći".
+
+public int x;
+public int y;
+public int zbroj;
+
+void Update(){
+	x++;
+¸	zbroj=x+y;
+	if(zbroj < 500) 
+		Debug.Log("Manji");
+	else if(500<=zbroj && zbroj<=2000)
+		Debug.Log("Prosječan");
+	else if(zbroj>2000)
+		Debug.Log("Najveći");
+}
+
+Neka se zbrajaju dva javna broja, ako je njihov zbroj veći od 15 neka bool endGame postaje true, a ako su manji ili jednaki neka je false. Ovo napravite u drugoj vlastitoj metodi, Ako je endGame true neka se ispise u konzoli "Igra je zavrsena!", a ako je false neka se ispise "Wasted".
+
+public int x;
+public int y;
+public bool endGame;
+
+void zbroj(){
+	int z=x+y;
+	if(z>15)
+	{
+		endGame=true;
+	}
+	else if(z<=15)
+	{
+		endGame=false;	
+	}
+
+}
+
+void Start(){
+	zbroj();
+	if(endGame)
+	{
+		Debug.Log("Igra je zavrsena!");
+	}
+	else if (!endGame)
+	{
+		Debug.Log("Wasted");
+	}
+
+}
+
+Napišite skriptu gdje imate jedan bool i jedan javni broj. Ako je taj javni broj razlicit od 18 neka se pozove metoda MjenjajMe koja mjenja vrijednost tako da ako je bool bio true pretvara ga u false, a ako je bio false pretvara ga u true.
+
+bool testMe;
+public int x;
+
+void MjenjajMe()
+{
+
+	// testMe = !testMe;
+
+	if(testMe==true)
+		testMe=false;
+	else if(testMe==false)
+		testMe=true;
+}
+
+void Start()
+{
+	if(x != 18)
+		MjenjajMe();
+}
+
+
+
+
+
+if(x == y || y != z)
+
+if(x != z && z == 3.14)
+
+
+== jednako
+!= razlicit
+
+int x = 10;
+int y = 12;
+
+void Start ()
+{
+	if (x == y)
+	Debug.Log ("Jednako je");
+	else if (x != y)
+	Debug.Log ("Različito je");
+}
+
+
+int ivica = 5;
+int marica = 2;
+
+marica = marica - 1; 
+ivica = ivica + 1;  
+Debug.Log ("Ivica je Smrad"); 
+
+
+public int x;
+
+void Awake()
+{
+	Debug.Log($"Vrijednost x je: {x}");
+}
+
+
+
+public int x;
+public int y;
+ int zbroj;
+
+void Start ()
+{
+        zbroj = x + y; 
+}
+void Update ()
+{
+    if (zbroj == 10)
+    Debug.Log ("Moze");
+    else
+    Debug.Log ("Rekla sam nemoze!");
+}
+
+
+FOR PETLJA
+
+for (int i = 0; i < 10; i++)
+{
+	//Nesto
+}
+
+
+for => dok je uvijet zadovoljen obavljat ce naredbe ogranicen broj puta
+int i => postavljanje brojača, najcesce se zove i
+uvijet
+inkrement => utjece na brojac, najcesce se mjenja za jedan
+
+for(int i = 0; uvijet, inkrement)
+{
+	naredba
+}
+
+
+Neka se u startu x vrijednost ispise 20 puta.
+
+int x;
+
+void Start()
+{
+	for(int i = 0; i < 20; i++)
+	{
+		Debug.Log(x);
+	}
+}
+
+
+Napisite skriptu koja ucitava upisane vrijednosti za igracevo ime, prezime, broj godina, visinu te grad iz kojeg dolazi. U metodi start se trebaju ispisati sve njegove vrijednosti.
+npr. "Ja sam Đuro Đurđević. Imam 522 godine, visok sam 302 cm i dolazim iz mjesta koje se zove Knjaževac!"
+
+string ime;
+string prezime;
+string grad;
+int godine;
+int visina;
+
+void Start()
+{
+	Debug.Log($"Ja sam {ime} {prezime}. Imam {godine}, visok sam {visina} cm i dolazim iz mjesta koje se zove {grad}!");
+}
+
+
+WHILE
+
+Dok je istinito, naredba ce se izvrsavati
+
+while(true)
+{
+	naredba;
+	naredba koja utjece na uvijet;
+}
+
+while petlja je opasna za unity jer cesto izazove infinity loop koja zamrzne Unity+
+
+Primjer infinity loop-a
+
+int broj = 4;
+
+void Start()
+{
+	while(broj > 0)
+	{
+		Debug.Log(broj);
+		broj++;
+	}
+}
+
+Napisite while petlju koja je istinita dok je int x veci ili jednak od 0; U while petlji treba biti naredba koja x smanjuje za 2, te ispisuje u konzoli "Bzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz" i variablu x;
+
+int x; 
+
+void Start()
+{
+	while(x >= 0)
+	{
+		Debug.Log("Bzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz");
+	¸	Debug.Log(x);
+		x -= 2;
+	}
+}
+
+Napisite for petlju koja pise u konzoli odbrojavanje (npr. 10, 9, 8 ,7.. itd), ali krece od pocetne javne vrijednosti, te ne smije pasti ispod 0 ( zadnji broj mora biti 0).
+
+public int pocetno = 10;
+
+void Start()
+{
+	for(int i = pocetno; i >= 0; i--)
+	{
+		Debug.Log(i);
+		i += 1;
+	}
+}
+
+
+Napisite skriptu koja unosi igraceve informacije (username, ime championa, level, hp i 2 dodatno po izboru). Podaci se trebaju ispisati "Player (username) is playing with (champion). (username) is (level) level starting with: (hp) + (2 vase varijable)". Podaci se ispisuju tako da svaki frame se hp smanjuje za 1. Kada je igracu hp pa ispod 0 ili je 0 neka se ispise samo jednom "Player (username) has been killed". Poslije ispisa da je igrac umro se ne smije više nista ispisivati.
+
+
+string userName;
+string championName;
+int level;
+int hp = 100;
+string difficulty;
+int enemyCount;
+
+void Start()
+{
+	 for (int i = hp; i >= 0; i--)
+ 	 {
+    		 if (i > 0)
+     		 {
+			hp--;
+         		Debug.Log($"Player {userName} is playing with {championName}. {userName} is {level} level starting 			with{hp} and on {difficulty} difficulty with {enemyCount} enemies");
+
+     		 }
+     		else if (i <= 0)
+    		{
+         		Debug.Log($"Player {userName} has been killed");
+         		break;
+     		} 
+ 	}
+}
+
+
+Sto ce uciniti ova update metoda?
+
+int x = 4;
+
+void Update()
+{
+	while(x > 0)
+	{
+		if(x > 0)
+		{
+			Application.Quit();
+		}
+		x++;
+	}
+}
+
+Napisi petlju koja prvi frame ispisuje neparne brojeve od x do y koji je 90.
+
+
+float x;
+float y = 90f;
+
+void Awake(){
+	for(float i = x; i < 90){
+		if(i%2 != 0){
+			Debug.Log(i);
+			i+=2;
+		}
+		else{
+			i++;
+		}
+	}
+
+}
+
+Napisite skriptu koja ucitava javne vrijednosti, zatim te podatke ispisuje u navedeni tekst:
+"Moje ime je _____ i ja dolazim iz grada koji se zove ___, a viši sam od covjeka koji se zove _____ za ______ cm.". U kodu morate imati ucitavanje dvije vrijednosti visine i 2 vrijednosti grada, te dvije solucije teksta ovisno o tome koji je viši.
+
+public string nameOne = "Marko";
+public string nameTwo = "Janko";
+public string city = "Rijeka";
+public string city2 = "Split";
+public int heightOne = 170;
+public int heightTwo = 192;
+
+void Start()
+{
+	if(heightOne > heightTwo){
+		Debug.Log($"Moje ime je {nameOne} i ja dolazim iz grada koji se zove {city}, a viši sam od covjeka koji se zove {nameTwo} za {heightOne - heightTwo} cm.");
+	}
+	
+	else if(heightOne < heightTwo){
+		Debug.Log($"Moje ime je {nameTwo} i ja dolazim iz grada koji se zove {city2}, a viši sam od covjeka koji se zove {nameOne} za {heightTwo - heightOne} cm.");
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
